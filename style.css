@@ -286,5 +286,45 @@ h1 {
     color: white;
     transform: translateY(-5px);
 }
+/* ================= BUTTON FIX ================= */
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.hero-buttons a {
+    display: inline-block;
+    padding: 14px 32px;
+    margin: 0 10px;
+    border-radius: 40px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Primary Button */
+.btn-primary {
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    color: white !important;
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(139, 92, 246, 0.6);
+}
+
+/* Secondary Button */
+.btn-secondary {
+    border: 2px solid #8b5cf6;
+    color: #8b5cf6 !important;
+}
+
+.btn-secondary:hover {
+    background: #8b5cf6;
+    color: white !important;
+    transform: translateY(-4px);
+}
+
 
 
