@@ -248,4 +248,43 @@ h1 {
         transform: translateY(-10px);
     }
 }
+/* CTA Buttons */
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.hero-buttons a {
+    display: inline-block;
+    padding: 14px 30px;
+    margin: 0 10px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Primary Button */
+.btn-primary {
+    background: linear-gradient(135deg, #7c3aed, #4f46e5);
+    color: white;
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.6);
+}
+
+/* Secondary Button */
+.btn-secondary {
+    border: 2px solid #7c3aed;
+    color: #7c3aed;
+}
+
+.btn-secondary:hover {
+    background: #7c3aed;
+    color: white;
+    transform: translateY(-5px);
+}
+
 
