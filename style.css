@@ -23,7 +23,12 @@ body {
     }
 }
 
-/* HERO SECTION */
+/* ================= HERO SECTION ================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
 .hero {
     position: relative;
     height: 100vh;
@@ -32,88 +37,89 @@ body {
     align-items: center;
     text-align: center;
     overflow: hidden;
+    background: #0f172a;
 }
 
 .hero-content {
     max-width: 700px;
+    animation: fadeUp 1.5s ease forwards;
 }
 
-h1 {
-    font-size: 60px;
-    margin-bottom: 15px;
-    background: linear-gradient(135deg, #a855f7, #6366f1, #22d3ee);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-h2 {
-    font-size: 22px;
-    color: #cbd5e1;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 18px;
-    margin-bottom: 35px;
-    color: #e2e8f0;
-}
-
-.tag {
-    display: inline-block;
-    font-size: 14px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #a855f7;
-    margin-bottom: 20px;
-}
-
+/* Animated Background Glow */
 .hero::before {
     content: "";
     position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(168,85,247,0.4), transparent 70%);
+    width: 750px;
+    height: 750px;
+    background: radial-gradient(circle, rgba(168,85,247,0.6), transparent 70%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    filter: blur(120px);
+    filter: blur(150px);
+    animation: glowPulse 8s ease-in-out infinite alternate;
     z-index: -1;
 }
 
-/* BUTTONS */
+@keyframes glowPulse {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1.25);
+    }
+}
+
+/* Animated Gradient Name */
+h1 {
+    font-size: 60px;
+    margin-bottom: 15px;
+    background: linear-gradient(270deg, #a855f7, #6366f1, #22d3ee, #a855f7);
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 6s ease infinite, floatName 4s ease-in-out infinite alternate;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes floatName {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-12px); }
+}
+
+/* Buttons Animation */
 .buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
+    margin-top: 20px;
+    animation: buttonFade 2s ease forwards;
 }
 
-.btn-primary,
-.btn-secondary {
-    padding: 12px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #a855f7, #6366f1);
-    color: white;
-    font-weight: bold;
-}
-
-.btn-primary:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(168,85,247,0.4);
-}
-
-.btn-secondary {
-    border: 1px solid white;
-    color: white;
-}
-
-.btn-secondary:hover {
-    background: white;
-    color: #0f172a;
+@keyframes buttonFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* PROJECTS */
@@ -229,3 +235,17 @@ p {
     transform: translateY(-5px);
     background: rgba(168,85,247,0.15);
 }
+/* Floating Name Animation */
+h1 {
+    animation: floatName 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatName {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
